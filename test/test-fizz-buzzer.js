@@ -1,10 +1,17 @@
 // import chai, declare expect variable
 const expect = require('chai').expect;
 
+// import fizzBuzzer
 const fizzBuzzer = require('../fizzBuzzer');
 
+// unit tests for our `adder` function
 describe('fizzBuzzer',function(){
+    
+    // test the normal case
     it("Returns true when the input value is the same as the expected value",function(){
+
+        // range of normal inputs, including
+        // notable cases like negative answers
         const normalCases = [
             {num: 15, expected: 'fizz-buzz'},
             {num: 5, expected:'buzz'},
@@ -13,6 +20,8 @@ describe('fizzBuzzer',function(){
             {num: 1111, expected: 1111}
         ];
 
+        // for each set of inputs (a, b), `adder` should
+        // produce the expected value
         normalCases.forEach(function(data){
             const answer = fizzBuzzer(data.num);
             expect(answer).to.equal(data.expected);
@@ -20,8 +29,10 @@ describe('fizzBuzzer',function(){
     });
 
     it("Returns false when incorrect values are not numbers", function(){
+        // range of bad inputs where not both are numbers
         const badCases = ['a','1','hello'];
 
+        // prove that an error is raised for bad inputs
         badCases.forEach(function(data){
             expect(function(){
                 fizzBuzzer(data)
