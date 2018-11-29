@@ -17,10 +17,11 @@ describe('fizzBuzzer',function(){
             {num: 5, expected:'buzz'},
             {num: 3, expected:'fizz'},
             {num: 1, expected: 1},
-            {num: 1111, expected: 1111}
+            {num: 1111, expected: 1111},
+            {num: -1111, expected: -1111}
         ];
 
-        // for each set of inputs (a, b), `adder` should
+        // for each set of inputs `fizzBuzzer` should
         // produce the expected value
         normalCases.forEach(function(data){
             const answer = fizzBuzzer(data.num);
